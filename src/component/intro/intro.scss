@@ -34,7 +34,8 @@
                width: 80%;     
                
                @include mobile{
-                height: 50%;
+                height: 40%;
+                width: 40%;
               }
            }
        }

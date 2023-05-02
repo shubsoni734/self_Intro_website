@@ -29,11 +29,11 @@
     justify-content: center;
     margin: 0;
     @include mobile{
-      margin: 0;
+      flex:1.5;
+      margin:0;
     }
 
-    h2 {
-        
+    h2 { 
       font-size: 30px;
       font-weight: 700;
     }

@@ -89,7 +89,7 @@ export default function Notes() {
             <a
               href="https://drive.google.com/drive/folders/1soDo04d-yYsuR1Kc4KVs7zfwPeAviHeV?usp=sharing"
             >
-              <img src="assets/edit.png" alt="" />
+              <img src="assets/system.png" alt="" />
             </a>
           </div>
           <a
@@ -103,7 +103,7 @@ export default function Notes() {
             <a
               href="https://drive.google.com/drive/folders/1soDo04d-yYsuR1Kc4KVs7zfwPeAviHeV?usp=sharing"
             >
-              <img src="assets/edit.png" alt="" />
+              <img src="assets/nodejs.png" alt="" />
             </a>
           </div>
           <a

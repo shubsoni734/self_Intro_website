@@ -1,14 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState,useRef, createRef } from 'react';
+import emailjs from '@emailjs/browser';
 import "./contact.scss"
 import PersonIcon from "@mui/icons-material/Person";
 import MailIcon from "@mui/icons-material/Mail";
 
 export default function Contact() {
   const[message,setMessage]=useState(false)
+  const inputname = useRef();
+  const inputEmail = useRef();
+  const message1 = useRef();
+  const form = useRef();
 
   const handelSubmit =  (e) =>{
       e.preventDefault();
-      setMessage(true)
+      emailjs.sendForm('service_pngcwii', 'template_7wfn3ja', form.current, 'mAlHJaab1IDfLZCtu')
+      .then((result) => {
+          console.log(result.text);
+          setMessage(true)
+          
+      }, (error) => {
+          console.log(error.text);
+      });
+      inputname.current.value='';
+      inputEmail.current.value='';
+      message1.current.value='';
   }
   return (
     <div className='contact' id='contact'>
@@ -17,10 +32,10 @@ export default function Contact() {
       </div>
       <div className="right">
         <h2>Contact</h2>
-        <form onSubmit={handelSubmit} >
-        <input type="text" name='name' placeholder='Name' />
-          <input type="text" name='email' placeholder='Email' />
-          <textarea placeholder='Message'></textarea>
+        <form ref={form} onSubmit={handelSubmit} >
+        <input ref={inputname} type="text" name='user_name' placeholder='Name' required />
+          <input ref={inputEmail} type="email" name='user_email' placeholder='Email'required />
+          <textarea ref={message1} name='message' placeholder='Message' required></textarea>
           <button type="submit" >Send</button>
           <div className="itemContainer">
             <PersonIcon className="icon" />
